@@ -1,0 +1,10 @@
+flask
+flask_wtf
+wtforms
+pandas
+fuzzywuzzy
+sklearn
+scipy
+gunicorn
+numpy
+flask_bootstrap
