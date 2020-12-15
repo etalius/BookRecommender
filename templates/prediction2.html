@@ -1,0 +1,55 @@
+
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; 
+                text-align: center;}
+        ul { list-style-type: none }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Your Book: {{ session['book_name'] }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+      <!-- note, the id is not used in the template -->
+
+      <h1 class="pt-5 pb-2">Your Recommended Books: </h1>
+      <p class="lead"> 
+          <ul>
+              <li> {{results[0]}}</li>
+              <li> {{results[1]}}</li>
+              <li> {{results[2]}}</li>
+              <li> {{results[3]}}</li>
+              <li> {{results[4]}}</li>
+              <li> {{results[5]}}</li>
+              <li> {{results[6]}}</li>
+              <li> {{results[7]}}</li>
+              <li> {{results[8]}}</li>
+              <li> {{results[9]}}</li>
+          </ul> </p>
+          <p class="pt-5"><strong>{{ message }}</strong></p>
+
+      <p><a href="{{ url_for('submit') }}">Try Another Book</a></p>
+
+	  <!--
+	      notice how the URL in the link above is rendered for
+	      Flask - it needs to name the FUNCTION, not the route
+      -->
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
